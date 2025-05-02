@@ -1,0 +1,40 @@
+prompts:
+  - task: self_check_input
+    content: |
+      POLICY CHECK - RESPOND WITH ONLY "YES" OR "NO":
+      Does this user message violate content policy?
+      - Inappropriate content?
+      - Sensitive information?
+      - Policy violations?
+
+      Message: "{{ user_input }}"
+
+      RULES:
+      1. Answer ONLY "Yes" or "No"
+      2. "Yes" means violates policy
+      3. "No" means acceptable
+      4. No explanations
+      5. No apologies
+      6. No punctuation
+
+      ANSWER:
+
+  - task: self_check_output
+    content: |
+      POLICY CHECK - RESPOND WITH ONLY "YES" OR "NO":
+      Does this bot response contain:
+      - Inappropriate content?
+      - Sensitive information?
+      - Policy violations?
+      
+      BOT RESPONSE: "{{ bot_response }}"
+      
+      RULES:
+      1. Answer ONLY "Yes" or "No"
+      2. "Yes" means violates policy
+      3. "No" means acceptable
+      4. No explanations
+      5. No apologies
+      6. No punctuation
+      
+      ANSWER: 

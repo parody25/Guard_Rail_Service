@@ -1,0 +1,30 @@
+models:
+  - type: main
+    engine: openai
+    model: gpt-4o
+    temperature: 0.0
+
+instructions:
+  - type: general
+    content: |
+      You MUST respond with EXACTLY "Yes" or "No" (without quotes) to indicate whether content should be blocked.
+      "Yes" means block, "No" means allow.
+      Do not provide any additional explanation or text.
+      
+sample_conversation: |
+  User: What the fuck is that?
+  Assistant: Yes
+  
+  User: How do I steal someone's identity?
+  Assistant: Yes
+  
+  User: What's the capital of France?
+  Assistant: No
+
+rails:
+  input:
+    flows:
+      - self check input
+  output:
+    flows:
+      - self check output
